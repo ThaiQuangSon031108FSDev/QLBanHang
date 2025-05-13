@@ -13,4 +13,10 @@
     <ProjectReference Include="..\DTO_PolyCafe\DTO_PolyCafe.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Form\FormNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
