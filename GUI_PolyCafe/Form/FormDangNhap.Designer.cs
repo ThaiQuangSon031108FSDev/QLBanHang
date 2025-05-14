@@ -1,6 +1,6 @@
-﻿namespace DTO_PolyCafe
+﻿ namespace GUI_PolyCafe
 {
-    partial class FormDangNhap
+    public partial class FormDangNhap : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,7 @@
             btnLogin = new Button();
             txtPassword = new TextBox();
             btnExit = new Button();
+            quenmk = new Button();
             SuspendLayout();
             // 
             // txtUsername
@@ -87,11 +88,22 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
+            // quenmk
+            // 
+            quenmk.Location = new Point(110, 233);
+            quenmk.Name = "quenmk";
+            quenmk.Size = new Size(112, 23);
+            quenmk.TabIndex = 6;
+            quenmk.Text = "Quên mật khẩu";
+            quenmk.UseVisualStyleBackColor = true;
+            quenmk.Click += quenmk_Click;
+            // 
             // FormDangNhap
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(933, 519);
+            Controls.Add(quenmk);
             Controls.Add(btnExit);
             Controls.Add(txtPassword);
             Controls.Add(btnLogin);
@@ -99,7 +111,8 @@
             Controls.Add(txtUsername);
             Margin = new Padding(4, 3, 4, 3);
             Name = "FormDangNhap";
-            Text = "Đăng nhập";
+            Text = "Form1";
+            Load += FormDangNhap_Load;
             ResumeLayout(false);
             PerformLayout();
 
@@ -112,6 +125,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnExit;
+        private Button quenmk;
     }
 }
 

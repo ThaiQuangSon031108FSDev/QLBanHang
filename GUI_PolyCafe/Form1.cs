@@ -11,6 +11,8 @@
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            using var frm = new FormDangNhap();
+            frm.ShowDialog();  // hoặc frm.Show();
         }
 
         private void menuQL_LoaiSP_Click(object sender, EventArgs e)
