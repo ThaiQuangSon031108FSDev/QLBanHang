@@ -42,7 +42,7 @@
 
         private void menuHT_DoiMatKhau_Click(object sender, EventArgs e)
         {
-          //  new FormChangePassword().ShowDialog();
+            new DoiMatKhau().ShowDialog();
         }
 
         private void menuTK_NhapNV_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@
 
         private void menuQL_PhieuBanHang_Click(object sender, EventArgs e)
         {
-         //   new FormPhieuBanHang().ShowDialog();
+           new FormPhieuBanHang().ShowDialog();
         }
 
         private void menuQL_SanPham_Click(object sender, EventArgs e)
@@ -78,7 +78,7 @@
 
         private void menuQL_TheLuuDong_Click(object sender, EventArgs e)
         {
-       //     new FormLoaiSanPham().ShowDialog();
+          new FormTheLuuDong().ShowDialog();
         }
     }
 }

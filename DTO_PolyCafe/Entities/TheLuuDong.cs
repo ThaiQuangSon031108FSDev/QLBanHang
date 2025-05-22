@@ -10,6 +10,6 @@ namespace DTO_PolyCafe.Entities
     {
         public string MaThe { get; set; } = string.Empty;
         public string ChuSoHuu { get; set; } = string.Empty;
-        public string TrangThai { get; set; } = string.Empty;
+        public bool TrangThai { get; set; } // ← Sửa thành bool
     }
 }

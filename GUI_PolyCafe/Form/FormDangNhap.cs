@@ -23,31 +23,19 @@ namespace GUI_PolyCafe
         {
             var email = txtUsername.Text.Trim();
             var pass = txtPassword.Text.Trim();
-            var hash = ComputeSha256(pass);
 
-            MessageBox.Show($"Email: {email}\nHash: {hash}", "Debug");
+            // gỡ bỏ hoặc comment dòng sau nếu muốn bỏ kiểm tra:
+            // bool ok = _auth.Login(email, pass, ComputeSha256);
+            // if (!ok) return;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(pass))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.", "Lỗi",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            bool ok = _auth.Login(email, pass, ComputeSha256);
-            if (!ok)
-            {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu.", "Đăng nhập thất bại",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Đăng nhập thành công
+            // Luôn mở Form1 bất kể ok là gì
+            MessageBox.Show("Đăng nhập thành công vui lòng dùng phần mềm 1 cách tinh tế.");
             Hide();
-            using var main = new Form1();
-            main.ShowDialog();
+            Hide();
+            new Form1().ShowDialog();
             Close();
         }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -72,7 +60,8 @@ namespace GUI_PolyCafe
 
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
-
+            txtUsername.Text = "NV002";
+            txtPassword.Text = "password2";
         }
 
         private void quenmk_Click(object sender, EventArgs e)

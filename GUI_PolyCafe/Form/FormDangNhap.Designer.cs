@@ -111,7 +111,7 @@
             Controls.Add(txtUsername);
             Margin = new Padding(4, 3, 4, 3);
             Name = "FormDangNhap";
-            Text = "Form1";
+            Text = "Đăng nhập";
             Load += FormDangNhap_Load;
             ResumeLayout(false);
             PerformLayout();

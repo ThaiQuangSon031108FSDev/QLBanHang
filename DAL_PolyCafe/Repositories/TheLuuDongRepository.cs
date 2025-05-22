@@ -10,6 +10,20 @@ namespace DAL_PolyCafe.Repositories
         public DataTable GetAll()
             => DBUtil.Query("sp_GetAllTheLuuDong");
 
+        public TheLuuDong? GetById(string maThe)
+        {
+            var dt = DBUtil.Query("sp_GetTheLuuDongById",
+                new SqlParameter("@MaThe", maThe));
+            if (dt.Rows.Count == 0) return null;
+            var r = dt.Rows[0];
+            return new TheLuuDong
+            {
+                MaThe = r.Field<string>("MaThe")!,
+                ChuSoHuu = r.Field<string>("ChuSoHuu")!,
+                TrangThai = r.Field<bool>("TrangThai")!
+            };
+        }
+
         public int Insert(TheLuuDong e)
             => DBUtil.Execute("sp_InsertTheLuuDong",
                 new SqlParameter("@MaThe", e.MaThe),
@@ -24,9 +38,9 @@ namespace DAL_PolyCafe.Repositories
                 new SqlParameter("@TrangThai", e.TrangThai)
             );
 
-        public int Delete(string id)
+        public int Delete(string maThe)
             => DBUtil.Execute("sp_DeleteTheLuuDong",
-                new SqlParameter("@MaThe", id)
+                new SqlParameter("@MaThe", maThe)
             );
 
         public DataTable Find(string kw)
